@@ -1,5 +1,5 @@
 #include<stdio.h>
-main()
+void main()
 {
 	int a1[10],a2[10],i,j=0;
 	printf("Enter 10 numbers :\n");
@@ -25,4 +25,5 @@ main()
 	for(i=0;i<10;i++)
 	printf("%d ",a2[i]);
 	printf("\n");
+	return;
 }
