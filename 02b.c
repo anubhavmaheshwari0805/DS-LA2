@@ -8,7 +8,7 @@ struct node
 };
 void insert(struct node **a,int i)
 {
-	struct node *temp1,*temp2;
+	struct node *temp1;
 	temp1=(struct node*)malloc(sizeof(struct node));
 	temp1->next=NULL;
 	temp1->prev=NULL;
@@ -17,6 +17,7 @@ void insert(struct node **a,int i)
     *a=temp1;
     else
     {
+		struct node *temp2;
     	temp2=*a;
     	while(temp2->next!=NULL)
     	temp2=temp2->next;
@@ -59,7 +60,7 @@ void display(struct node *a)
 	}
 	printf("\n");
 }
-main()
+void main()
 {
 	struct node *a1=NULL,*a2=NULL;
 	int i,item;
@@ -72,4 +73,5 @@ main()
 	rearrange(a1,&a2);
 	printf("Rearranged List :\n");
 	display(a2);
+	return;
 }
