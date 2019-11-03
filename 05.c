@@ -7,7 +7,7 @@ struct node
 };
 void insert(struct node **a,int i)
 {
-	struct node *temp1,*temp2;
+	struct node *temp1;
 	temp1=(struct node*)malloc(sizeof(struct node));
 	temp1->next=NULL;
 	temp1->bun=i;
@@ -18,7 +18,8 @@ void insert(struct node **a,int i)
     }
     else
     {
-    	temp2=*a;
+    	struct node *temp2;
+        temp2=*a;
         do
         {
             temp2=temp2->next;
@@ -32,7 +33,7 @@ void display(struct node *a)
 	struct node *temp;
 	temp=a;
 	if(temp==NULL)
-	printf("Empty Carousel.\n");
+	printf("Carousel is empty.\n");
 	do
 	{
 		printf("%d ",temp->bun);
@@ -44,13 +45,15 @@ void display(struct node *a)
 }
 void picked(struct node **a)
 {
-    struct node *temp1,*temp2;
-    temp1=*a;
-    printf("A bun is picked.\n");
     if((*a)->next==*a)
-    *a=NULL;
+    {
+        printf("Bun %d is picked.\n",(*a)->bun);
+        *a=NULL;
+    }
     else
     {
+        struct node *temp1,*temp2;
+        temp1=*a;
         do
         {
             temp1=temp1->next;
@@ -61,6 +64,7 @@ void picked(struct node **a)
             temp2=temp2->next;
         }while(temp2->next!=temp1);
         temp2->next=temp1->next;
+        printf("Bun %d is picked.\n",temp1->bun);
         free(temp1);
     }
 }
@@ -79,12 +83,12 @@ void main()
                     insert(&c,n);
                     break;
             case 2: if(c==NULL)
-                    printf("Empty Carousel.\n");
+                    printf("Carousel is empty.\n");
                     else
                     picked(&c);
                     break;
             case 3: if(c==NULL)
-                    printf("Empty Carousel.\n");
+                    printf("Carousel is empty.\n");
                     else
                     {
                         printf("Carousel : ");
