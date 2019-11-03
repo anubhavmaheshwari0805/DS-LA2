@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<string.h>
-main()
+void main()
 {
 	char str[20];
 	printf("Enter the string : ");
@@ -22,4 +22,5 @@ main()
 	for(i=0;i<len;i++)
 	printf("%c:%d ",str[i],str[i]);
 	printf("}\n");
+	return;
 }

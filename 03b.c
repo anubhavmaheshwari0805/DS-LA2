@@ -8,7 +8,7 @@ struct node
 };
 void insert(struct node **a,char i)
 {
-	struct node *temp1,*temp2;
+	struct node *temp1;
 	temp1=(struct node*)malloc(sizeof(struct node));
 	temp1->next=NULL;
 	temp1->ch=i;
@@ -17,6 +17,7 @@ void insert(struct node **a,char i)
     *a=temp1;
     else
     {
+		struct node *temp2;
     	temp2=*a;
     	while(temp2->next!=NULL)
     	temp2=temp2->next;
@@ -51,7 +52,7 @@ void display(struct node *a)
 	}
 	printf("}\n");
 }
-main()
+void main()
 {
 	struct node *s=NULL;
 	char ch;
@@ -69,4 +70,5 @@ main()
 	for(i=0;i<len;i++)
 	priority(s,len-i-1);
 	display(s);
+	return;
 }
