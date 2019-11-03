@@ -7,7 +7,7 @@ struct node
 };
 void insert(struct node **a,char i)
 {
-	struct node *temp1,*temp2;
+	struct node *temp1;
 	temp1=(struct node*)malloc(sizeof(struct node));
 	temp1->next=NULL;
 	temp1->data=i;
@@ -15,6 +15,7 @@ void insert(struct node **a,char i)
     *a=temp1;
     else
     {
+        struct node *temp2;
     	temp2=*a;
     	while(temp2->next!=NULL)
     	temp2=temp2->next;
