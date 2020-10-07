@@ -22,8 +22,10 @@ void main()
 	    }
 	}
 	printf("Rearranged Array :\n");
-	for(i=0;i<10;i++)
-	printf("%d ",a2[i]);
+        for(i=0;i<10;i++)
+	{
+         printf("%d ",a2[i]);
+        }
 	printf("\n");
-	return;
+	return 0;
 }
