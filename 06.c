@@ -12,28 +12,28 @@ void insert(struct node **a,int i)
 	temp1->next=NULL;
 	temp1->bun=i;
 	if(*a==NULL)
-    {
-        *a=temp1;
-        (*a)->next=*a;
-    }
-    else
-    {
-    	struct node *temp2;
-        temp2=*a;
-        do
-        {
-            temp2=temp2->next;
-        }while(temp2->next!=*a);
-    	temp2->next=temp1;
-        temp1->next=*a;
+    	{
+        	*a=temp1;
+        	(*a)->next=*a;
+    	}
+    	else
+    	{
+    		struct node *temp2;
+        	temp2=*a;
+        	do
+        	{
+            		temp2=temp2->next;
+        	}while(temp2->next!=*a);
+    		temp2->next=temp1;
+        	temp1->next=*a;
 	}
 }
 void display(struct node *a)
 {
 	struct node *temp;
 	temp=a;
-	if(temp==NULL)
-	printf("Carousel is empty.\n");
+	if(temp==NULL){
+	printf("Carousel is empty.\n");}
 	do
 	{
 		printf("%d ",temp->bun);
