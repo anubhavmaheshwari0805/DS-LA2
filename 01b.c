@@ -17,7 +17,7 @@ void insert(struct node **a,int i)
     *a=t1;
     else
     {
-		struct node *temp2;
+	struct node *temp2;
     	temp2=*a;
     	while(temp2->next!=NULL)
     	temp2=temp2->next;
